@@ -1,264 +1,314 @@
+/* Fonts */
+@font-face {
+    font-family: "Arial";
+    src: url(./assets/fonts/Arial-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url(./assets/fonts/Arial-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Google Sans";
+    src: url(./assets/fonts/GoogleSans-Medium.otf);
+    font-weight: 500;
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 
 /* Header */
-header{
-  height: 60px;
+header {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 6px 18px;
 }
 
-nav {
-  height: 100%;
-  width: 100%;
-  padding: 10px 20px;
+.header__links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
 }
 
-.navbar ul {
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 14px;
+.header__links > a:not(:first-child) {
+    margin-left: 15px;
 }
 
-.navbar ul li {
-  margin-left: 15px;
+.header__links a {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 13px;
+    line-height: 24px;
+    text-decoration: none;
 }
 
-.navbar ul li a {
-  color: black;
+.header__links a:hover {
+    text-decoration: underline;
 }
 
-.link:hover {
-  text-decoration: underline;
+.header__buttons {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
 }
 
-.circle-shadow {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header__buttons > *:not(:first-child) {
+    margin-left: 12px;
 }
 
-.circle-shadow:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+.icon-button {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
 }
 
-.menu-icon,
-.user-icon span {
-  font-size: 18;
+.icon-button:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
 
-.user-icon span {
-  color: white;
+.icon-button__icon {
+    height: 24px;
+    width: 24px;
+    fill: #5f6368;
 }
 
-.user-icon {
-  background-color: rgb(162, 224, 167);
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  align-items: center;
-  line-height: 31px;
-  padding-left: 9px;
+.primary-button {
+    height: 36px;
+    min-width: 96px;
+    padding: 9px 23px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #1a73e8;
+    color: white;
+    font-family: "Google Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.primary-button:hover {
+    background-color: #1b66c9;
+    cursor: pointer;
 }
 
 
 /* Content */
-section {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.content {
+    height: calc(100% - 94px - 60px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.content-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 100px;
-}
-
+/* Phần logo */
 .logo {
-  width: 320px;
-  margin-bottom: 20px;
+    height: 290px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
 
+.logo img {
+    height: 92px;
+    background-color: transparent;
+}
+
+/* Phần tìm kiếm */
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 26px;
+}
+
+/* Thanh tìm kiếm */
 .search-bar {
-  border: 1px solid lightgray;
-  height: 45px;
-  width: 600px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  padding-left: 15px;
-}
-
-.search-bar:hover {
-  box-shadow: 0px 0px 4px 0px #B5B5B5;
-}
-
-.loupe {
-  height: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .search-bar input {
-  flex-grow: 1;
-  height: 30px;
-  margin-left: 15px;
-  font-size: 16px;
-  border: none;
+    min-height: 48px;
+    min-width: 584px;
+    padding: 11px 0;
+    padding-left: 40px;
+    padding-right: 80px;
+    border: 1px solid #dfe1e5;
+    border-radius: 100px;
+    outline: none;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    line-height: 22px;
+    overflow-x: hidden;
+    word-wrap: break-word;
 }
 
+.search-bar input:hover,
 .search-bar input:focus {
-  outline: none;
+    border: 1px solid #dfe1e5;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
 }
 
-.micro {
-  height: 22px;
-  margin-right: 16px;
+.search-bar__icon {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    margin: 0 8px;
 }
 
-.camera {
-  height: 22px;
-  margin-right: 16px;
+.icon-search {
+    left: 0;
+    height: 20px;
+    width: 20px;
+    margin-left: 15px;
+    fill: #9aa0a6;
 }
 
-.search-button {
-  margin-top: 20px;
+.icon-micro {
+    top: 11px;
+    right: 41px;
+    margin-right: 16px;
 }
 
-.search-button button {
-  height: 40px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  margin-left: 10px;
-  color: black;
-  background-color: #F2F3F4;
+.icon-camera {
+    top: 11px;
+    right: 1px;
+    margin-right: 16px;
 }
 
-.search-button button:hover {
-  border: 1px solid lightgray;
+/* Phần nút bên dưới thanh tìm kiếm */
+.search-buttons {
+    display: flex;
+    margin-top: 29px;
 }
 
-.google-search-button {
-  width: 120px;
+.search-buttons button {
+    height: 36px;
+    min-width: 54px;
+    margin: 0 6px;
+    padding: 0 16px;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #3c4043;
+    font-size: 14px;
+    text-align: center;
 }
 
-.lucky-search-button {
-  width: 140px;
+.search-buttons button:hover {
+    border: 1px solid lightgray;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
-.language {
-  margin-top: 20px;
-  font-size: 14px;
+.search-buttons button:focus {
+    border: 1px solid #4285f4;
+    outline: none;
 }
 
-.language p a {
-  margin-left: 5px;
-  color: blue;
+/* Phần chọn ngôn ngữ */
+.languages {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 21px;
+    margin-right: 4px;
+    color: #4d5156;
+    font-size: small;
+    line-height: 28px;
 }
 
-.language p a:hover {
+.languages a {
+    margin-left: 9px;
+    color: #1a0dab;
+    text-align: center;
+    text-decoration: none;
+}
+
+.languages a:first-child {
+    margin-left: 7px;
+}
+
+.languages a:hover {
   text-decoration: underline;
 }
 
 
 /* Footer */
 footer {
-  background-color: #F2F2F2;
-  height: 90px;
+    height: 94px;
+    width: 100%;
+    background-color: #f2f2f2;
 }
 
-.footer-content {
-  display: flex;
-  align-items: center;
-  padding: 30px;
+.footer-upper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 30px;
+    border-bottom: 1px solid #dadce0;
+    color: gray;
+    font-size: 15px;
 }
 
-.upper-footer {
-  height: 50%;
-  border-bottom: 1px solid lightgray;
+.footer-lower {
+    height: 46px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
-.upper-footer p {
-  color: gray;
-  font-size: 15px;
+.footer-lower > * {
+    display: flex;
 }
 
-.lower-footer {
-  height: 50%;
-  display: flex;
-  justify-content: space-between;
+.footer-lower a {
+    height: 100%;
+    padding: 15px;
+    color: #70757a;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-.lower-footer ul li a {
-  font-size: 14px;
-  color: gray;
-}
-
-.lower-footer ul li a:hover {
-  text-decoration: underline;
-}
-
-.lower-left-footer {
-  display: flex;
-}
-
-.lower-left-footer li {
-  margin-right: 15px;
-}
-
-.lower-right-footer {
-  display: flex;
-}
-
-.lower-right-footer li {
-  margin-left: 15px;
-}
-
-
-/* Responsive on smartphone, tablet */
-@media only screen and (max-width: 650px) {
-  /* Search Bar */
-  .search-bar {
-    width: 90%;
-  }
-
-  /* Footer */
-  footer {
-    height: 130px;
-  }
-
-  .upper-footer {
-    height: 40px;
-  }
-
-  .lower-footer {
-    height: 90px;
-    flex-direction: column;
-  }
+.footer-lower a:hover {
+    text-decoration: underline;
 }
